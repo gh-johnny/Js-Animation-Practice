@@ -1,0 +1,32 @@
+@mixin visualizer($color:red){
+    outline: 1px solid $color;
+}
+@mixin animationIntro($delay){
+    animation: intro .8s ease $delay forwards;
+    opacity: 0;
+}
+@mixin size($width,$height){
+    width: $width;
+    height: $height;
+}
+@mixin bgImg($bgImg,$bgSize,$bgRepeat,$bgPosition){
+    background-image: $bgImg;
+    background-size: $bgSize;
+    background-repeat: $bgRepeat;
+    background-position: $bgPosition;
+}
+@mixin flexColumn($justify-content:flex-start,$align-items:left,$gap:0){
+    display: flex;
+    flex-direction: column;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    row-gap: $gap;
+}
+@mixin positionAbsolute($z-index:0,$top:default,$right:default,$bottom:default,$left:default){
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $z-index;
+}

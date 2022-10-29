@@ -1,0 +1,15 @@
+@media (hover: hover){
+    html:hover{
+        cursor: default;
+
+        a:hover{
+            cursor: pointer;
+        }
+    }
+    nav{
+        a:hover{
+            outline: 5px solid $bgHeaderGreen;
+            cursor: pointer;
+        }
+    }
+}
