@@ -10,15 +10,7 @@ html{
 }
 body{
     background-color: $white;
-    // overflow: hidden;
-    // display: flex;
-    // flex-direction: column;
-    // scroll-snap-type: y mandatory;
-    // overflow: scroll;
-
-    &>*{
-        scroll-snap-align: center;
-    }
+    overflow: hidden
 }
 header{
     @include size(100vw,100vh);
@@ -74,6 +66,7 @@ header{
 nav{
     position: fixed;
     left: 0;
+    z-index: 99;
     @include size(4em,100vh);
     @include flexColumn(flex-end);
 
@@ -115,25 +108,11 @@ nav{
     }
 }
 .about{
+    box-shadow: 3px 3px 40px black;
     @include size(100vw,100vh);
     background-color: $white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
 
-    .card{
-        @include size(20vw,60vh);
-        box-shadow: 2px 2px 5px $black;
-        border-radius: 10px;
-        position: relative;
-        overflow: hidden;
-
-        .number{
-            font-size: 5em;
-            color: lightgray;
-            text-transform: lowercase;
-            text-align: right;
-        }
-        
-    }
+    
 }
+

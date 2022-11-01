@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js" defer></script>
+    <script src="./app.js" defer></script>
     <title>Marcelo's Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
-    <header id="home">
-        <nav>
-            <ul>
-                <li><a href="#home"><i class="fa-solid fa-house"></i></a></li>
-                <li><a href="#about"><i class="fa-solid fa-user"></i></a></li>
-                <li><a href="#skills"><i class="fa-solid fa-code"></i></a></li>
-                <li><a href="#contact"><i class="fa-solid fa-at"></i></a></li>
-                <aside></aside><!--vertical line-->
-            </ul>
-        </nav>
+    <nav>
+        <ul>
+            <li><a href="#home"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="#about"><i class="fa-solid fa-user"></i></a></li>
+            <li><a href="#skills"><i class="fa-solid fa-code"></i></a></li>
+            <li><a href="#contact"><i class="fa-solid fa-at"></i></a></li>
+            <aside></aside><!--vertical line-->
+        </ul>
+    </nav>
+    <header class='panel'id="home">
+        
         <aside>
             <article> 
                 <a href="https://github.com/Marcelo64/My-Resume/raw/resume/jo%C3%A3o_marcelo_resume.pdf" download="joao_marcelo_resume">My resume <i class="fa-solid fa-file-arrow-down"></i></a>
@@ -30,16 +34,13 @@
             <small>&ltWeb Developer/&gt</small>
         </h1>
     </header>
-    <section class="about" id="about">
-        <article class="card">
-            <aside class="number">About</aside>
-        </article>
-       
+    <section class="panel about" id="about">
+        
     </section>
-    <section class="work" id="work">
+    <section class="panel work" id="work">
 
     </section>
-    <section class="contact" id="contact">
+    <section class="panel contact" id="contact">
 
     </section>
 </body>
