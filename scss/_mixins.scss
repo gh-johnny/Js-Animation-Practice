@@ -30,3 +30,11 @@
     left: $left;
     z-index: $z-index;
 }
+@mixin stars($width,$animationDuration,$shadow){
+    width: $width;
+    aspect-ratio: 1;
+    background-color: transparent;
+    animation: starFlow $animationDuration linear infinite;
+    border-radius: 50%;
+    box-shadow: $shadow;
+}

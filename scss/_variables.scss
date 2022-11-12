@@ -1,8 +1,20 @@
 
 
-$white: white;
+$white: #ffffff;
 $black: rgb(20, 20, 20);
 $lightBlue: rgb(0, 220, 220);
 $bgHeaderSalmon: salmon;
-$bgHeaderGreen: hsl(154, 96%, 35%);
+$bgHeaderGreen: #04af65;
+//Stars function
+@function multiple-box-shadow ($n){
+    $value: '#{random(7000)}px #{random(2000)}px #{$white}';
+    @for $i from 2 to $n {
+        $value : '#{$value} , #{random(7000)}px #{random(2000)}px #{$white}';
+    }
+
+    @return unquote($value);
+};
+$shadows-small: multiple-box-shadow(750);
+$shadows-medium: multiple-box-shadow(750);
+$shadows-big: multiple-box-shadow(750);
 

@@ -108,11 +108,52 @@ nav{
     }
 }
 .about{
-    box-shadow: 3px 3px 40px black;
     @include size(100vw,100vh);
     background-color: $white;
-    
-
-    
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse at bottom, #0b1016 0%, #090A0F 100%);
+    box-shadow: 3px 3px 30px black;
+    #stars{
+        @include stars(1px,50s,$shadows-small);
+        &::after{
+            @include size(1px,1px);
+            %afterStar{
+                content: '';
+                position: absolute;
+                left: 200px;
+                background: transparent;
+                border-radius: 50%;
+            }
+            box-shadow: $shadows-small;
+        }
+    }
+    #stars2{
+        @include stars(2px,90s,$shadows-medium);
+        &::after{
+            @include size(2px,2px);
+            @extend %afterStar;
+            box-shadow: $shadows-medium;
+        }
+    }
+    #stars3{
+        @include stars(3px,110s,$shadows-big);
+        &::after{
+            @include size(3px,3px);
+            @extend %afterStar;
+            box-shadow: $shadows-big;
+        }
+    }
 }
+
+
+// //
+// .paper-plane{
+//     width: 7.5em;
+//     position: absolute;
+//     z-index: 99;
+//     left: 0;
+//     top: 240px;
+// }
+
 
