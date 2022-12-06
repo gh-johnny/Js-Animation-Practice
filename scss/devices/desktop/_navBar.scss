@@ -1,0 +1,31 @@
+nav{
+    position: fixed;
+    left: 0;
+    z-index: 99;
+    @include size(4em,100vh);
+    @include flexColumn(flex-end);
+
+    ul{
+        @include size(100%,50%);
+        @include flexColumn(space-evenly,center);
+
+        li{
+            list-style-type: none;
+            a{
+                display: grid;
+                place-content: center;
+                @include size(2em,2em);
+                color: $black;
+                text-decoration: none;
+                outline: 1px solid transparent;
+                border-radius: 50%;
+                transition: all ease-in-out 100ms;
+            }
+        }
+
+        aside{  
+            @include size(.1em,3em);
+            background-color: $black;
+        }
+    }
+}

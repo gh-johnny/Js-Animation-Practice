@@ -1,5 +1,9 @@
 @import 'variables';
 @import 'mixins';
 @import 'main';
+@import 'devices/desktop/navBar';
+@import 'devices/desktop/header';
+@import 'devices/desktop/about';
+@import 'devices/desktop/projects';
+@import 'devices/desktop/contact';
 @import 'hover';
-@import 'animations';

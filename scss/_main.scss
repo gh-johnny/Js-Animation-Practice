@@ -12,148 +12,22 @@ body{
     background-color: $white;
     overflow: hidden
 }
-header{
-    @include size(100vw,100vh);
-    // position: relative;
+.section-title{
+    width: 100%;
     display: flex;
-    align-items: center;
-    background-color: $white;
-    isolation: isolate;
-    overflow-x: hidden;
+    justify-content: center;
+    padding-top: 3%;
 
-    //Babckground image
-        &>aside{
-            @include bgImg(url('../img/BgHeader.png'),cover,no-repeat, left);
-            @include size(50vw,100vh);
-            @include positionAbsolute(-1,0,0,0);
-
-            &>article{
-                @include positionAbsolute(999,default,4em,3em);
-                display: flex;
-                column-gap: 1em;
-    
-                a{
-                    color: whitesmoke;
-                    text-decoration: none;
-                    border: 1px solid $bgHeaderGreen;
-                    border-radius: 7px;
-                    padding: .5em;
-    
-                    i{
-                        color: $bgHeaderGreen;
-                    }
-                }
-            }
-        }
-    
-    
-    //Title
-    h1{
-        // @include animationIntro(3.25s);
-        @include flexColumn();
-        @include size(fit-content,auto);
-        // background-image: linear-gradient(to top, $bgHeaderGreen, $bgHeaderSalmon);
-        // background-clip: text;
-        // color: transparent;
-        font-size: 4.5em;
-        margin: 0 0 14rem 5rem;
-
-        small{
-            font-size: .45em;
-        }
+    & > span{
+        position: absolute;
+        z-index: 10;
+        border-bottom: 1px solid whitesmoke;
+        color: white;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        width: 4.75em;
+        padding-bottom: .75%;
     }
+
 }
-nav{
-    position: fixed;
-    left: 0;
-    z-index: 99;
-    @include size(4em,100vh);
-    @include flexColumn(flex-end);
-
-    ul{
-        @include size(100%,50%);
-        @include flexColumn(space-evenly,center);
-
-        li{
-            list-style-type: none;
-            a{
-                display: grid;
-                place-content: center;
-                @include size(2em,2em);
-                color: $black;
-                text-decoration: none;
-                outline: 1px solid transparent;
-                border-radius: 50%;
-                transition: all ease-in-out 100ms;
-            }
-
-            // &:nth-child(1){
-            //     @include animationIntro(2s);
-            // }
-            // &:nth-child(2){
-            //     @include animationIntro(1.5s);
-            // }
-            // &:nth-child(3){
-            //     @include animationIntro(1.25s);
-            // }
-            // &:nth-child(4){
-            //     @include animationIntro(1s);
-            // }
-        }
-
-        aside{  
-            @include size(.1em,3em);
-            background-color: $black;
-        }
-    }
-}
-.about{
-    @include size(100vw,100vh);
-    background-color: $white;
-    position: relative;
-    overflow: hidden;
-    background: radial-gradient(ellipse at bottom, #0b1016 0%, #090A0F 100%);
-    box-shadow: 3px 3px 30px black;
-    #stars{
-        @include stars(1px,50s,$shadows-small);
-        &::after{
-            @include size(1px,1px);
-            %afterStar{
-                content: '';
-                position: absolute;
-                left: 200px;
-                background: transparent;
-                border-radius: 50%;
-            }
-            box-shadow: $shadows-small;
-        }
-    }
-    #stars2{
-        @include stars(2px,90s,$shadows-medium);
-        &::after{
-            @include size(2px,2px);
-            @extend %afterStar;
-            box-shadow: $shadows-medium;
-        }
-    }
-    #stars3{
-        @include stars(3px,110s,$shadows-big);
-        &::after{
-            @include size(3px,3px);
-            @extend %afterStar;
-            box-shadow: $shadows-big;
-        }
-    }
-}
-
-
-// //
-// .paper-plane{
-//     width: 7.5em;
-//     position: absolute;
-//     z-index: 99;
-//     left: 0;
-//     top: 240px;
-// }
-
-

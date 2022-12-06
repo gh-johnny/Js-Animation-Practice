@@ -1,14 +1,19 @@
-let homeBtn = document.querySelector('.fa-house');
-let aboutBtn = document.querySelector('.fa-user');
-let skillsBtn = document.querySelector('.fa-code');
-let contactBtn = document.querySelector('.fa-at');
-let bar = document.querySelector('ul > aside');
-let navNewColor = '#fff';
-let stars = document.querySelectorAll('.stars');
-//GSAP
-gsap.registerPlugin(ScrollTrigger);
+//Variables
+let homeBtn = $('.fa-house');
+let aboutBtn = $('.fa-user');
+let projectsBtn = $('.fa-code');
+let contactBtn = $('.fa-at');
+let bar = $('ul > aside');
+let navLightColor = '#fff';
+let navDarkColor = 'rgb(20, 20, 20)';
+let navPickedColor = '#04af65';
+//Default states
+$('.fa-house').css('color',navPickedColor);
+$('.slide').hide();
+$($('.slide')[0]).show();
 //Main scroll behavior
-gsap.utils.toArray(".panel").forEach((panel, i) => {
+gsap.registerPlugin(ScrollTrigger);
+gsap.utils.toArray(".panel").forEach((panel) => {
     ScrollTrigger.create({
         trigger: panel,
         start: "top top", 
@@ -18,49 +23,97 @@ gsap.utils.toArray(".panel").forEach((panel, i) => {
     });
 });
 //About section
-//Navigation colors
-let tl = gsap.timeline({defaults: {color: navNewColor}})
-.to(bar,{backgroundColor: navNewColor})
+//Navigation bar colors animation
+let aboutNavBarTl = gsap.timeline({defaults: {color: navLightColor}})
+.to(bar,{backgroundColor: navLightColor})
 .to(contactBtn,{})
-.to(skillsBtn,{})
+.to(projectsBtn,{})
+.to(aboutBtn,{color: navPickedColor})
+.to(homeBtn,{})
+.to(bar,{backgroundColor: navLightColor})
+ScrollTrigger.create({
+    trigger: '.marker-about',
+    start: 'top bottom',
+    scrub: true,
+    animation: aboutNavBarTl,
+});
+//Background stars animation
+gsap.fromTo('#stars1',{x: window.innerWidth},{x:-3500, duration: 50});
+gsap.fromTo('#stars2',{x: window.innerWidth},{x:-3500, duration: 100});
+gsap.fromTo('#stars3',{x: window.innerWidth},{x:-3500, ease: 'linear',duration: 125});
+//Slide effect
+let slidePicker = $('.slide-picker')
+let prevPick = slidePicker[0];
+slidePicker.on('click',function(){
+    let pickedIdx = $(this).index();
+    let pickedSlide = $('.slide').eq(pickedIdx)
+    let card1 = pickedSlide[0].children[0];
+    let card2 = pickedSlide[0].children[1];
+    if(this == prevPick) return;
+    function slideOut(whereTo,n1,n2){
+        slidePicker.attr('disabled', true)
+        gsap.timeline().to($('.slide')[$(prevPick).index()].children[n1],{x:`${whereTo}${window.innerWidth}`,duration:1.25,ease:'bounce.out'});
+        gsap.timeline().to($('.slide')[$(prevPick).index()].children[n2],{x:`${whereTo}${window.innerWidth}`,duration:1.25,ease:'bounce.out',delay: .25});
+        setTimeout(()=>{
+            $('.slide').hide()
+            pickedSlide.show()
+        },2000)
+    }
+    function slideIn(whereTo,c1,c2){
+        gsap.timeline({defaults: {duration:1.25,ease:'bounce.out',x:0}})
+        .fromTo(c1,{x:`${whereTo}${window.innerWidth}`},{delay:2})
+        .fromTo(c2,{x:`${whereTo}${window.innerWidth}`},{delay:-.5});
+        setTimeout(() => {
+            slidePicker.attr('disabled', false)
+        }, 4000);
+    }
+    if(pickedIdx > $(prevPick).index()){
+        slideOut(`-`,0,1);
+        slideIn(``,card1,card2)
+    }else{
+        slideOut(``,1,0)
+        slideIn(`-`,card2,card1)
+    }
+    prevPick = this;
+})  
+if(
+    (window.performance.navigation && window.performance.navigation.type === 1) ||
+    window.performance
+    .getEntriesByType('navigation')
+    .map((nav) => nav.type)
+    .includes('reload')
+)slidePicker[0].checked = true;
+//Projects section
+//Animation
+let projectsNavBarTl = gsap.timeline({defaults: {color: navLightColor}})
+.to('.marker-rpoject',{color: navLightColor})
+.to(bar,{backgroundColor: navLightColor})
+.to(contactBtn,{})
+.to(projectsBtn,{color: navPickedColor})
 .to(aboutBtn,{})
 .to(homeBtn,{})
 ScrollTrigger.create({
-    trigger: '.panel about',
-    start: 'top top',
+    trigger: '.marker-projects',
+    start: 'top bottom',
     scrub: true,
-    animation: tl,
-    // markers: true
+    animation: projectsNavBarTl,
 });
-//Background stars
-// let starTl = gsap.timeline()
-// .to('#stars1',{x:-3500, duration: 50})
-// .to('#stars2',{x:-3500, duration: 100})
-// .to('#stars3',{x:-3500, duration: 135});
-// ScrollTrigger.create({
-//     trigger: '.panel about',
-//     start: 'top top',
-//     animation: starTl
-// })
-gsap.fromTo('#stars1',{x: window.innerWidth},{x:-3500, duration: 50});
-gsap.fromTo('#stars2',{x: window.innerWidth},{x:-3500, duration: 100});
-gsap.fromTo('#stars3',{x: window.innerWidth},{x:-3500, duration: 135});
 
-
-
-//Skills section
-//Animation
-// .to(homeBtn,{color: 'transparent'})
-// .to(homeBtn,{})
-// .to(aboutBtn,{color: 'transparent'})
-// .to(aboutBtn,{})
-// .to(skillsBtn,{color: 'transparent'})
-// .to(skillsBtn,{})
-// .to(contactBtn,{color: 'transparent'})
-// .to(contactBtn,{})
-// .to(bar,{backgroundColor: 'transparent'})
-// .to(bar,{backgroundColor: navNewColor})
-
+//Contact section
+//Navigation bar colors animation
+let contactNavBarTl = gsap.timeline({defaults: {color: navDarkColor}})
+// .to('.marker-rpoject',{color: navDarkColor})
+.to(bar,{backgroundColor: navDarkColor})
+.to(contactBtn,{color: navPickedColor})
+.to(projectsBtn,{})
+.to(aboutBtn,{})
+.to(homeBtn,{})
+ScrollTrigger.create({
+    trigger: '.marker-contact',
+    start: 'top bottom',
+    scrub: true,
+    animation: contactNavBarTl,
+});
 
 
 

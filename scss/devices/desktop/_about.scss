@@ -1,0 +1,88 @@
+%afterStar{
+    content: '';
+    position: absolute;
+    z-index: 4;
+    left: 200px;
+    background: transparent;
+    border-radius: 50%;
+}
+.about{
+    @include size(100vw,100vh);
+    background-color: $white;
+    position: relative;
+    box-shadow: 3px 3px 30px black;
+    overflow: hidden;
+    &::before{
+        content: '';
+        background: radial-gradient(ellipse at bottom, #1a324f 0%, #090A0F 100%);
+        position: absolute;
+        z-index: 3;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .picker-slide-container{
+        position: absolute;
+        z-index: 11;
+        bottom: 15%;
+        right: 25%;
+    }
+
+    .about-content{
+
+        & > .slide:nth-child(1){
+            & > .glassCard{
+                background-color: red;
+            }
+        }
+        & > .slide:nth-child(2){
+            & > .glassCard{
+                background-color: yellow;
+            }
+        }
+        & > .slide:nth-child(3){
+            & > .glassCard{
+                background-color: green;
+            }
+        }
+
+        .glassCard{
+            width: 200px;
+            height: 250px;
+            position: absolute;
+            z-index: 10;
+            left: 25%;
+            top: 25%;
+            border-radius: 10px;
+            background-color: rgb(244, 244, 172); 
+
+            &:nth-child(2){
+                left: 50%; 
+            }
+        }
+    }
+    
+    #stars{
+        @include stars(1px,50s,$shadows-small);
+        &::after{
+            @include size(1px,1px);
+            box-shadow: $shadows-small;
+        }
+    }
+    #stars2{
+        @include stars(2px,90s,$shadows-medium);
+        &::after{
+            @include size(2px,2px);
+            @extend %afterStar;
+            box-shadow: $shadows-medium;
+        }
+    }
+    #stars3{
+        @include stars(3px,110s,$shadows-big);
+        &::after{
+            @include size(3px,3px);
+            @extend %afterStar;
+            box-shadow: $shadows-big;
+        }
+    }
+}

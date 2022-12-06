@@ -37,4 +37,6 @@
     animation: starFlow $animationDuration linear infinite;
     border-radius: 50%;
     box-shadow: $shadow;
+    position: absolute;
+    z-index: 4;
 }

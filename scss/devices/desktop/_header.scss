@@ -1,0 +1,46 @@
+header{
+    @include size(100vw,100vh);
+    display: flex;
+    align-items: center;
+    background-color: $white;
+    isolation: isolate;
+    overflow-x: hidden;
+
+    //Babckground image
+        &>aside{
+            @include bgImg(url('../img/BgHeader.png'),cover,no-repeat, left);
+            @include size(50vw,100vh);
+            @include positionAbsolute(-1,0,0,0);
+
+            &>article{
+                @include positionAbsolute(999,default,4em,3em);
+                display: flex;
+                column-gap: 1em;
+    
+                a{
+                    color: whitesmoke;
+                    text-decoration: none;
+                    border: 1px solid $bgHeaderGreen;
+                    border-radius: 7px;
+                    padding: .5em;
+    
+                    i{
+                        color: $bgHeaderGreen;
+                    }
+                }
+            }
+        }
+    
+    
+    //Title
+    h1{
+        @include flexColumn();
+        @include size(fit-content,auto);
+        font-size: 4.5em;
+        margin: 0 0 14rem 5rem;
+
+        small{
+            font-size: .45em;
+        }
+    }
+}

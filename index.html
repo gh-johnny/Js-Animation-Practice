@@ -10,6 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/MotionPathPlugin.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.0.3/tilt.jquery.min.js" integrity="sha512-14AZ/DxUrlF26z6v7egDkpJHKyJRn/7ue2BgpWZ/fmqrqVzf4PrQnToy99sHmKwzKev/VZ1tjPxusuTV/n8CcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Marcelo's Portfolio</title>
 </head>
 <body>
@@ -17,7 +19,7 @@
         <ul>
             <li><a href="#home"><i class="fa-solid fa-house"></i></a></li>
             <li><a href="#about"><i class="fa-solid fa-user"></i></a></li>
-            <li><a href="#skills"><i class="fa-solid fa-code"></i></a></li>
+            <li><a href="#projects"><i class="fa-solid fa-code"></i></a></li>
             <li><a href="#contact"><i class="fa-solid fa-at"></i></a></li>
             <aside></aside><!--vertical line-->
         </ul>
@@ -30,20 +32,61 @@
             </article>
         </aside>
         <!-- color change on hover... to top... -->
-        <h1>João Marcelo <br/> Furtado Romero
+        <h1>I'm Marcelo
             <small>&ltWeb Developer/&gt</small>
         </h1>
     </header>
     <section class="panel about" id="about">
+        <div class="marker-about"></div>
+        <section class="section-title">
+            <span>about</span>
+        </section>
+        <section class="about-content">
+            <div class="slide">
+                <article class="glassCard">
+                    <article></article>
+                </article>
+                <article class="glassCard">
+                    <article></article>
+                </article>
+            </div>
+            <div class="slide">
+                <article class="glassCard">
+                    <article></article>
+                </article>
+                <article class="glassCard">
+                    <article></article>
+                </article>
+            </div>
+            <div class="slide">
+                <article class="glassCard">
+                    <article></article>
+                </article>
+                <article class="glassCard">
+                    <article></article>
+                </article>
+            </div>
+        </section>
+        <section class="picker-slide-container">
+            <input type="radio" name="slideOpt" class="slide-picker" checked/>
+            <input type="radio" name="slideOpt" class="slide-picker"/>
+            <input type="radio" name="slideOpt" class="slide-picker"/>
+        </section>
         <div id="stars1" class="stars"></div>
         <div id="stars2" class="stars"></div>
         <div id="stars3" class="stars"></div>
     </section>
-    <section class="panel work" id="work">
-
+    <section class="panel projects" id="projects">
+        <div class="marker-projects"></div>
+        <section class="section-title">
+            <span>projects</span>
+        </section>
     </section>
     <section class="panel contact" id="contact">
-        
+        <div class="marker-contact"></div>
+        <section class="section-title">
+            <span>contact</span>
+        </section>
     </section>
 </body>
 <script src="./app.js"></script>
