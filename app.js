@@ -98,11 +98,10 @@ ScrollTrigger.create({
     scrub: true,
     animation: projectsNavBarTl,
 });
-
 //Contact section
 //Navigation bar colors animation
 let contactNavBarTl = gsap.timeline({defaults: {color: navDarkColor}})
-// .to('.marker-rpoject',{color: navDarkColor})
+.to('.marker-rpoject',{color: navLightColor})
 .to(bar,{backgroundColor: navDarkColor})
 .to(contactBtn,{color: navPickedColor})
 .to(projectsBtn,{})
@@ -114,9 +113,33 @@ ScrollTrigger.create({
     scrub: true,
     animation: contactNavBarTl,
 });
-
-
-
-
-
-
+//Sphere of skills
+const skills = [
+    'HTML5',
+    'CSS3',
+    'SASS',
+    'LESS',
+    'JavaScript',
+    'jQuery',
+    'ReactJS',
+    'Vue.js',
+    'PHP',
+    'Node.js',
+    'MySQL',
+    'Figma',
+    'Photoshop',
+    'Angular.js',
+    'WordPress',
+    'Wix',
+    'Weebly',
+    'OOP',
+    'UML',
+];
+const tagCloud = TagCloud('.sphere',skills,{
+    radius: 360,
+    maxSpeed: 'slow',
+    initSpeed: 'slow',
+    direction: 100,
+    keep: true,
+})
+$('.sphere').css('color',navLightColor)

@@ -7,6 +7,12 @@
 html{
     scroll-behavior: smooth;
     overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+// Chrome
+html::-webkit-scrollbar {
+    display: none;
 }
 body{
     background-color: $white;

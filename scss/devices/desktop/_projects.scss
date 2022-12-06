@@ -2,5 +2,20 @@
     width: 100vw;
     height: 100vh;
     background-color: black;
+    position: relative;
     
+    .sphere{
+        display: grid;
+        place-items: center;
+        width: 100vw;
+        height: 100vh;
+    }
+    .tagcloud{
+        scale: .6;
+
+        .tagcloud--item{
+            transition: 300ms;
+            font-size: 1.3em;
+        }
+    }
 }

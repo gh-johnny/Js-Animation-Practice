@@ -12,4 +12,7 @@
             cursor: pointer;
         }
     }
+    .tagcloud--item:hover{
+        color: $bgHeaderGreen
+    }
 }
