@@ -1,5 +1,3 @@
-
-
 $white: #ffffff;
 $black: rgb(20, 20, 20);
 $lightBlue: rgb(0, 220, 220);
@@ -14,7 +12,7 @@ $bgHeaderGreen: #04af65;
 
     @return unquote($value);
 };
-$shadows-small: multiple-box-shadow(750);
-$shadows-medium: multiple-box-shadow(750);
-$shadows-big: multiple-box-shadow(750);
+$shadows-small: multiple-box-shadow(650);
+$shadows-medium: multiple-box-shadow(650);
+$shadows-big: multiple-box-shadow(650);
 

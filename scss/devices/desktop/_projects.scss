@@ -1,21 +1,57 @@
 .projects{
     width: 100vw;
     height: 100vh;
-    background-color: black;
-    position: relative;
-    
-    .sphere{
-        display: grid;
-        place-items: center;
+    background-image: linear-gradient(to right, black 50%, $black 50%);
+
+    .content{
         width: 100vw;
         height: 100vh;
-    }
-    .tagcloud{
-        scale: .6;
+        display: flex;
 
-        .tagcloud--item{
-            transition: 300ms;
-            font-size: 1.3em;
+        .left{
+            width: 50vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .sphere{
+                display: grid;
+                place-items: center;
+                position: relative;
+                margin-bottom: 15vh;
+
+                &::after{
+                    content: '';
+                    width: 60%;
+                    height: 5vh;
+                    background-color: gainsboro;
+                    border-radius: 70%;
+                    box-shadow: 3px 3px 30px 3px white;
+                    position: absolute;
+                    bottom: 0%;
+                }
+                &::before{
+                    content: '';
+                    width: 103%;
+                    height: 10vh;
+                    background-image:  linear-gradient(to top, rgba(gainsboro, .35), transparent );
+                    position: absolute;
+                    bottom: calc(0% + 4%);
+                    z-index: 2;
+                    clip-path: polygon(0 0, 100% 0, 79% 100%, 21% 100%);
+                }
+            }
+            .tagcloud{
+                scale: 0.8;
+        
+                .tagcloud--item{
+                    transition: 300ms;
+                    font-size: 1.3em;
+                }
+            }
+        }
+        .right{
+            width: 50vw;
         }
     }
 }

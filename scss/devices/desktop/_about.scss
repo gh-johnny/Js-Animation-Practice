@@ -31,30 +31,119 @@
     .about-content{
 
         & > .slide:nth-child(1){
-            & > .glassCard{
-                background-color: red;
+            & > .about-card{
+                // border: 1px solid black;
+                color: white;
+                text-shadow: 5px 5px black;
+
+                &:nth-child(1){
+                    .austronaut{
+                        margin-top: 10%;
+                        background-image: url('../../../img/astronaut.png');
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        width: 100%;
+                        aspect-ratio: 1;
+                    }
+
+                    h3{
+                        bottom: 40vh;
+                    }
+                }
+                &:nth-child(2){
+                    p{
+                        width: 150%;
+                        margin-top: 20%;
+                        font-size: 1.5em;
+                        text-shadow: 2px 2px 7px black;
+                    }
+                    h3{
+                        bottom: 0;
+                    }
+                }
+
+                h3{
+                    font-size: 3em;
+                    position: absolute;
+                    // border: 1px solid red;
+                    width: 200%;
+                }
             }
         }
         & > .slide:nth-child(2){
-            & > .glassCard{
-                background-color: yellow;
+            & > .about-card{
+
+                &:nth-child(1){
+                    $postItSize: 19vw;
+                    @include size($postItSize,$postItSize);
+                    background-color: rgb(250, 250, 82);
+                    box-shadow: 3px 3px 10px black;
+                    border-radius: 0px;
+
+                    article{
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 10%;
+
+                        h4{
+                            font-family: 'Permanent Marker', cursive;
+                            width: 100%;
+                            text-align: end;
+                            box-sizing: border-box;
+                            padding: 2%;
+                            span{
+                                font-family: inherit;
+                                text-decoration: line-through;
+                            }
+                        }
+
+                        li{
+                            font-family: 'Permanent Marker', cursive;
+                            display: flex;
+                            width: fit-content;
+                            margin-left: 7.5%;
+                            font-size: 1.3vw;
+                            font-weight: 900;
+                            transition: 200ms;
+                            position: relative;
+                        }
+                    }
+                }
+                &:nth-child(2){
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    left: 60%;
+                    z-index: 3;
+
+                    .me-coding{
+                        background: center / contain no-repeat url('../../../img/meCoding.png');
+                        width: 30vw;
+                        scale: 2.2;
+                        aspect-ratio: 1;
+                        filter: drop-shadow(3px 3px 10px black);
+
+                    }
+                }
             }
         }
         & > .slide:nth-child(3){
-            & > .glassCard{
+            & > .about-card{
                 background-color: green;
             }
         }
 
-        .glassCard{
+        .about-card{
             width: 200px;
             height: 250px;
             position: absolute;
             z-index: 10;
             left: 25%;
-            top: 25%;
+            top: 35%;
             border-radius: 10px;
-            background-color: rgb(244, 244, 172); 
 
             &:nth-child(2){
                 left: 50%; 
@@ -84,5 +173,57 @@
             @extend %afterStar;
             box-shadow: $shadows-big;
         }
+    }
+    .uncheck{
+        &::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: black;
+            bottom: 45%;
+            left: 0;
+        }
+    }
+    .about-card > span{
+        filter: drop-shadow(2px 2px 1px black);
+        position: absolute;
+        color: white;
+        width: 25vh;
+        font-size: 1.5vw;
+        display: none;
+    }
+    .one{
+        right: 110%;
+        top: -10%;
+        rotate: -5deg;
+        text-align: end;
+    }
+    .two{
+        right: 120%;
+        top: 40%;
+        rotate: -5deg;
+        text-align: end;
+    }
+    .three{
+        right: 120%;
+        bottom: -15%;
+        rotate: -5deg;
+        text-align: end;
+    }
+    .four{
+        left: 110%;
+        top: -20%;
+        rotate: 5deg;
+    }
+    .five{
+        left: 110%;
+        top: 35%;
+        rotate: -5deg;
+    }
+    .six{
+        left: 120%;
+        bottom: -15%;
+        rotate: 5deg;
     }
 }

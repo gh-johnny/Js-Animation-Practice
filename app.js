@@ -11,6 +11,7 @@ let navPickedColor = '#04af65';
 $('.fa-house').css('color',navPickedColor);
 $('.slide').hide();
 $($('.slide')[0]).show();
+$('.about-card li').addClass('uncheck')
 //Main scroll behavior
 gsap.registerPlugin(ScrollTrigger);
 gsap.utils.toArray(".panel").forEach((panel) => {
@@ -38,9 +39,43 @@ ScrollTrigger.create({
     animation: aboutNavBarTl,
 });
 //Background stars animation
-gsap.fromTo('#stars1',{x: window.innerWidth},{x:-3500, duration: 50});
-gsap.fromTo('#stars2',{x: window.innerWidth},{x:-3500, duration: 100});
-gsap.fromTo('#stars3',{x: window.innerWidth},{x:-3500, ease: 'linear',duration: 125});
+gsap.fromTo('#stars1',{x: window.innerWidth},{x:-1500, duration: 30});
+gsap.fromTo('#stars2',{x: window.innerWidth},{x:-1500, duration: 60});
+gsap.fromTo('#stars3',{x: window.innerWidth},{x:-1500, ease: 'linear',duration: 85});
+//Austronaut flotating
+gsap.timeline({repeat:-1,defaults:{duration:2,ease:'power1.inOut'}})
+.fromTo('.austronaut',{y:'+=15'},{y:'-=15'})
+.fromTo('.austronaut',{y:'-=15'},{y:'+=15'});
+//meCoding floating
+gsap.timeline({repeat:-1,defaults:{duration:2,ease:'power1.inOut'}})
+.fromTo('.me-coding',{y:'+=15'},{y:'-=15'})
+.fromTo('.me-coding',{y:'-=15'},{y:'+=15'});
+//Crossing out post-it and showing answer
+$(function(){
+    $('.about-card li').click(function(){
+        $(this).toggleClass('uncheck');
+        switch($(this).index()){
+            case 0:
+                $('.one').toggle()
+            break
+            case 1:
+                $('.two').toggle()
+            break
+            case 2:
+                $('.three').toggle()
+            break
+            case 3:
+                $('.four').toggle()
+            break
+            case 4:
+                $('.five').toggle()
+            break
+            case 5:
+                $('.six').toggle()
+            break
+        }
+    });
+});
 //Slide effect
 let slidePicker = $('.slide-picker')
 let prevPick = slidePicker[0];
@@ -136,9 +171,9 @@ const skills = [
     'UML',
 ];
 const tagCloud = TagCloud('.sphere',skills,{
-    radius: 360,
-    maxSpeed: 'slow',
-    initSpeed: 'slow',
+    radius: 235,
+    maxSpeed: 'fast',
+    initSpeed: 'fast',
     direction: 100,
     keep: true,
 })

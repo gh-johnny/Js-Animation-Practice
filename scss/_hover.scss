@@ -15,4 +15,8 @@
     .tagcloud--item:hover{
         color: $bgHeaderGreen
     }
+    .about-card li:hover{
+        cursor: pointer;
+        text-shadow: 2px 2px $white;
+    }
 }
