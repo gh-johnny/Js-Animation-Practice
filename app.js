@@ -11,7 +11,8 @@ let navPickedColor = '#04af65';
 $('.fa-house').css('color',navPickedColor);
 $('.slide').hide();
 $($('.slide')[0]).show();
-$('.about-card li').addClass('uncheck')
+$('.about-container li').addClass('uncheck');
+$('.sphere').css('color',navLightColor)
 //Main scroll behavior
 gsap.registerPlugin(ScrollTrigger);
 gsap.utils.toArray(".panel").forEach((panel) => {
@@ -42,17 +43,25 @@ ScrollTrigger.create({
 gsap.fromTo('#stars1',{x: window.innerWidth},{x:-1500, duration: 30});
 gsap.fromTo('#stars2',{x: window.innerWidth},{x:-1500, duration: 60});
 gsap.fromTo('#stars3',{x: window.innerWidth},{x:-1500, ease: 'linear',duration: 85});
-//Austronaut flotating
-gsap.timeline({repeat:-1,defaults:{duration:2,ease:'power1.inOut'}})
-.fromTo('.austronaut',{y:'+=15'},{y:'-=15'})
-.fromTo('.austronaut',{y:'-=15'},{y:'+=15'});
-//meCoding floating
-gsap.timeline({repeat:-1,defaults:{duration:2,ease:'power1.inOut'}})
-.fromTo('.me-coding',{y:'+=15'},{y:'-=15'})
-.fromTo('.me-coding',{y:'-=15'},{y:'+=15'});
+//Flotating animation
+const floatingAnimation = function(target,direction,axis,duration=2){
+    if(axis=='y'){
+        gsap.timeline({repeat:-1,defaults:{duration:duration,ease:'power1.inOut'}})
+        .fromTo(target,{y:`+=${direction}`},{y:`-=${direction}`})
+        .fromTo(target,{y:`-=${direction}`},{y:`+=${direction}`});
+    }else{
+        gsap.timeline({repeat:-1,defaults:{duration:duration,ease:'power1.inOut'}})
+        .fromTo(target,{x:`+=${direction}`},{x:`-=${direction}`})
+        .fromTo(target,{x:`-=${direction}`},{x:`+=${direction}`});
+    }
+}
+floatingAnimation('.austronaut',15,'y');
+floatingAnimation('.pencil',12,'y',3);
+floatingAnimation('.me-coding',13,'y',3);
+floatingAnimation('.me-coding',35,'x',5);
 //Crossing out post-it and showing answer
 $(function(){
-    $('.about-card li').click(function(){
+    $('.about-container li').click(function(){
         $(this).toggleClass('uncheck');
         switch($(this).index()){
             case 0:
@@ -87,20 +96,20 @@ slidePicker.on('click',function(){
     if(this == prevPick) return;
     function slideOut(whereTo,n1,n2){
         slidePicker.attr('disabled', true)
-        gsap.timeline().to($('.slide')[$(prevPick).index()].children[n1],{x:`${whereTo}${window.innerWidth}`,duration:1.25,ease:'bounce.out'});
-        gsap.timeline().to($('.slide')[$(prevPick).index()].children[n2],{x:`${whereTo}${window.innerWidth}`,duration:1.25,ease:'bounce.out',delay: .25});
+        gsap.timeline().to($('.slide')[$(prevPick).index()].children[n1],{x:`${whereTo}${window.innerWidth}`,duration:1,ease:'bounce.out'});
+        gsap.timeline().to($('.slide')[$(prevPick).index()].children[n2],{x:`${whereTo}${window.innerWidth}`,duration:1,ease:'bounce.out',delay: .25});
         setTimeout(()=>{
             $('.slide').hide()
             pickedSlide.show()
-        },2000)
+        },1500)
     }
     function slideIn(whereTo,c1,c2){
-        gsap.timeline({defaults: {duration:1.25,ease:'bounce.out',x:0}})
-        .fromTo(c1,{x:`${whereTo}${window.innerWidth}`},{delay:2})
-        .fromTo(c2,{x:`${whereTo}${window.innerWidth}`},{delay:-.5});
+        gsap.timeline({defaults: {duration:1,ease:'bounce.out',x:0}})
+        .fromTo(c1,{x:`${whereTo}${window.innerWidth}`},{delay:1.25})
+        .fromTo(c2,{x:`${whereTo}${window.innerWidth}`},{delay:-.25});
         setTimeout(() => {
             slidePicker.attr('disabled', false)
-        }, 4000);
+        }, 3000);
     }
     if(pickedIdx > $(prevPick).index()){
         slideOut(`-`,0,1);
@@ -121,7 +130,7 @@ if(
 //Projects section
 //Animation
 let projectsNavBarTl = gsap.timeline({defaults: {color: navLightColor}})
-.to('.marker-rpoject',{color: navLightColor})
+.to('.marker-projects',{color: navLightColor})
 .to(bar,{backgroundColor: navLightColor})
 .to(contactBtn,{})
 .to(projectsBtn,{color: navPickedColor})
@@ -132,21 +141,6 @@ ScrollTrigger.create({
     start: 'top bottom',
     scrub: true,
     animation: projectsNavBarTl,
-});
-//Contact section
-//Navigation bar colors animation
-let contactNavBarTl = gsap.timeline({defaults: {color: navDarkColor}})
-.to('.marker-rpoject',{color: navLightColor})
-.to(bar,{backgroundColor: navDarkColor})
-.to(contactBtn,{color: navPickedColor})
-.to(projectsBtn,{})
-.to(aboutBtn,{})
-.to(homeBtn,{})
-ScrollTrigger.create({
-    trigger: '.marker-contact',
-    start: 'top bottom',
-    scrub: true,
-    animation: contactNavBarTl,
 });
 //Sphere of skills
 const skills = [
@@ -177,4 +171,18 @@ const tagCloud = TagCloud('.sphere',skills,{
     direction: 100,
     keep: true,
 })
-$('.sphere').css('color',navLightColor)
+//Contact section
+//Navigation bar colors animation
+let contactNavBarTl = gsap.timeline({defaults: {color: navDarkColor}})
+.to('.marker-projects',{color: navLightColor})
+.to(bar,{backgroundColor: navDarkColor})
+.to(contactBtn,{color: navPickedColor})
+.to(projectsBtn,{})
+.to(aboutBtn,{})
+.to(homeBtn,{})
+ScrollTrigger.create({
+    trigger: '.marker-contact',
+    start: 'top bottom',
+    scrub: true,
+    animation: contactNavBarTl,
+});
