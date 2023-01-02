@@ -194,10 +194,6 @@
                                         left: 33%;
                                     }
                                 }
-                                //All by myself
-                                &:nth-child(3){
-                                    font-weight: 700;
-                                }
                             }
                         }
                         &::after{
@@ -206,7 +202,6 @@
                     }
                 }
                 .row2{
-                    // border: 1px solid red;
                     display: flex;
                     justify-content: space-between;
                     align-items: flex-end;
@@ -220,10 +215,6 @@
                             &::after{
                                 top: 15%;
                                 right: -7.5px;
-                            }
-
-                            span{
-                                text-decoration: underline;
                             }
                         }
                         &:nth-child(2){
