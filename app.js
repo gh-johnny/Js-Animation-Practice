@@ -96,8 +96,8 @@ slidePicker.on('click',function(){
     if(this == prevPick) return;
     function slideOut(whereTo,n1,n2){
         slidePicker.attr('disabled', true)
-        gsap.timeline().to($('.slide')[$(prevPick).index()].children[n1],{x:`${whereTo}${window.innerWidth}`,duration:1,ease:'bounce.out'});
-        gsap.timeline().to($('.slide')[$(prevPick).index()].children[n2],{x:`${whereTo}${window.innerWidth}`,duration:1,ease:'bounce.out',delay: .25});
+        gsap.timeline().to($('.slide')[$(prevPick).index()].children[n1],{x:`${whereTo}${window.innerWidth}`,duration:1,ease:'power4.out'});
+        gsap.timeline().to($('.slide')[$(prevPick).index()].children[n2],{x:`${whereTo}${window.innerWidth}`,duration:1,ease:'power4.out',delay: .25});
         setTimeout(()=>{
             $('.slide').hide()
             pickedSlide.show()
