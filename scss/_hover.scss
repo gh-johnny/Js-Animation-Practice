@@ -1,22 +1,32 @@
 @media (hover: hover){
+    //Cursor is default everywhere
     html:hover{
         cursor: default;
 
+        //All a tags
         a:hover{
             cursor: pointer;
         }
     }
     nav{
+        //Navigation side bar interaction
         a:hover{
             outline: 5px solid $bgHeaderGreen;
             cursor: pointer;
         }
     }
+    //Each item from the sphere of skills
     .tagcloud--item:hover{
         color: $bgHeaderGreen
     }
+    //Each item from the list/post-it
     .about-container li:hover{
         cursor: pointer;
         text-shadow: 2px 2px $white;
+    }
+    //The slide selector
+    .selector:hover{
+        cursor: pointer;
+        scale: 1.1;
     }
 }

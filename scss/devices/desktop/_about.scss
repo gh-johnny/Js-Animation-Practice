@@ -1,3 +1,5 @@
+//Generall classes for later
+//After element for the stars
 %afterStar{
     content: '';
     position: absolute;
@@ -6,6 +8,7 @@
     background: transparent;
     border-radius: 50%;
 }
+//Generall specs for the speech bubbles
 %speechBubble{
     margin: 2%;
     box-sizing: border-box;
@@ -13,7 +16,6 @@
     background-color: whitesmoke;
     border-radius: 20px;
 }
-
 .about{
     @include size(100vw,100vh);
     background-color: $white;
@@ -28,7 +30,7 @@
         width: 100vw;
         height: 100vh;
     }
-    //Input type radio
+    //Input type radio for picking the slides
     .slide-picker-container{
         position: absolute;
         z-index: 99;
@@ -181,6 +183,7 @@
                         rotate: 45deg;
                     }
                 }   
+                //Speech bubbles
                 .row1{
                     article{
                         @extend %speechBubble;
@@ -239,11 +242,7 @@
                             &::after{
                                 top: 20%;
                                 left: -2%;
-                                // display: none;
-                                // background-color: red;
                             }
-                            
-                            // border-radius: 0px 20px 20px 20px;
                         }
                     }
                 }
@@ -279,6 +278,7 @@
             }
         }
     }
+    //Bg stars
     #stars{
         @include stars(1px,50s,$shadows-small);
         &::after{
@@ -353,7 +353,7 @@
         rotate: 5deg;
     }
 }
-
+//Slide pickers label tag
 .selected{
     background-color: $bgHeaderGreen !important;
     box-shadow: 2px 2px black;

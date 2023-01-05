@@ -169,8 +169,8 @@ const skills = [
 ],
     tagCloud = TagCloud('.sphere',skills,{
     radius: 235,
-    maxSpeed: 'fast',
-    initSpeed: 'fast',
+    maxSpeed: 'slow',
+    initSpeed: 'slow',
     direction: 100,
     keep: true,
 })
