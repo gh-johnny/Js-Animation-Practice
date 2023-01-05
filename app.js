@@ -1,25 +1,30 @@
 //Variables
-let homeBtn = $('.fa-house');
-let aboutBtn = $('.fa-user');
-let projectsBtn = $('.fa-code');
-let contactBtn = $('.fa-at');
-let bar = $('ul > aside');
-let navLightColor = '#fff';
-let navDarkColor = 'rgb(20, 20, 20)';
-let navPickedColor = '#04af65';
+let homeBtn = $('.fa-house'),
+    aboutBtn = $('.fa-user'),
+    projectsBtn = $('.fa-code'),
+    contactBtn = $('.fa-at'),
+    bar = $('ul > aside'),
+    navLightColor = '#fff',
+    navDarkColor = 'rgb(20, 20, 20)',
+    navPickedColor = '#04af65',
+    listLi = $('.about-container li'),
+    slide = $('.slide');
+    labels = $('.selector'),
+    sphere = $('.sphere');
 //Default states
-$('.fa-house').css('color',navPickedColor);
-$('.slide').hide();
-$($('.slide')[0]).show();
-$('.about-container li').addClass('uncheck');
-$('.sphere').css('color',navLightColor)
+homeBtn.css('color',navPickedColor);
+slide.hide();
+$(slide[0]).show();
+$(labels[0]).toggleClass('selected')
+listLi.addClass('uncheck');
+sphere.css('color',navLightColor);
 //Main scroll behavior
 gsap.registerPlugin(ScrollTrigger);
 gsap.utils.toArray(".panel").forEach((panel) => {
     ScrollTrigger.create({
         trigger: panel,
         start: "top top", 
-        pin: true, 
+        // pin: true, 
         pinSpacing: false,
         snap: 1 / 1,
     });
@@ -42,18 +47,18 @@ ScrollTrigger.create({
 //Background stars animation
 gsap.fromTo('#stars1',{x: window.innerWidth},{x:-1500, duration: 30});
 gsap.fromTo('#stars2',{x: window.innerWidth},{x:-1500, duration: 60});
-gsap.fromTo('#stars3',{x: window.innerWidth},{x:-1500, ease: 'linear',duration: 85});
+gsap.fromTo('#stars3',{x: window.innerWidth},{x:-1500, ease: 'power1.out',duration: 85});
 //Flotating animation
 const floatingAnimation = function(target,direction,axis,duration=2){
-    if(axis=='y'){
+    (axis=='y') 
+    ?
         gsap.timeline({repeat:-1,defaults:{duration:duration,ease:'power1.inOut'}})
         .fromTo(target,{y:`+=${direction}`},{y:`-=${direction}`})
-        .fromTo(target,{y:`-=${direction}`},{y:`+=${direction}`});
-    }else{
+        .fromTo(target,{y:`-=${direction}`},{y:`+=${direction}`})
+    :
         gsap.timeline({repeat:-1,defaults:{duration:duration,ease:'power1.inOut'}})
         .fromTo(target,{x:`+=${direction}`},{x:`-=${direction}`})
-        .fromTo(target,{x:`-=${direction}`},{x:`+=${direction}`});
-    }
+        .fromTo(target,{x:`-=${direction}`},{x:`+=${direction}`})
 }
 floatingAnimation('.austronaut',15,'y');
 floatingAnimation('.pencil',12,'y',3);
@@ -86,13 +91,18 @@ $(function(){
     });
 });
 //Slide effect
-let slidePicker = $('.slide-picker')
-let prevPick = slidePicker[0];
+let slidePicker = $('.slide-picker'),
+    prevPick = slidePicker[0];
+labels.on('click',function(){
+    if($(slidePicker).attr('disabled') == 'disabled') return
+    labels.removeClass('selected')
+    $(this).toggleClass('selected')
+})
 slidePicker.on('click',function(){
-    let pickedIdx = $(this).index();
-    let pickedSlide = $('.slide').eq(pickedIdx)
-    let card1 = pickedSlide[0].children[0];
-    let card2 = pickedSlide[0].children[1];
+    let pickedIdx = $(this).index(),
+        pickedSlide = $('.slide').eq(pickedIdx),
+        card1 = pickedSlide[0].children[0],
+        card2 = pickedSlide[0].children[1];
     if(this == prevPick) return;
     function slideOut(whereTo,n1,n2){
         slidePicker.attr('disabled', true)
@@ -112,21 +122,14 @@ slidePicker.on('click',function(){
         }, 3000);
     }
     if(pickedIdx > $(prevPick).index()){
-        slideOut(`-`,0,1);
+        slideOut(`-`,0,1)
         slideIn(``,card1,card2)
     }else{
         slideOut(``,1,0)
         slideIn(`-`,card2,card1)
     }
     prevPick = this;
-})  
-if(
-    (window.performance.navigation && window.performance.navigation.type === 1) ||
-    window.performance
-    .getEntriesByType('navigation')
-    .map((nav) => nav.type)
-    .includes('reload')
-)slidePicker[0].checked = true;
+})
 //Projects section
 //Animation
 let projectsNavBarTl = gsap.timeline({defaults: {color: navLightColor}})
@@ -163,8 +166,8 @@ const skills = [
     'Weebly',
     'OOP',
     'UML',
-];
-const tagCloud = TagCloud('.sphere',skills,{
+],
+    tagCloud = TagCloud('.sphere',skills,{
     radius: 235,
     maxSpeed: 'fast',
     initSpeed: 'fast',

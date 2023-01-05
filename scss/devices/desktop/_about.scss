@@ -34,6 +34,21 @@
         z-index: 99;
         bottom: 15%;
         right: 25%;
+        display: flex;
+        column-gap: 1rem;
+
+        input{
+            display: none;
+        }
+        label{
+           div{
+            background-color: transparent;
+            border: 4px solid $bgHeaderGreen;
+            @include size(3em,2px);
+            border-radius: 1em;
+            transition: 300ms;
+           }
+        }
     }
     //Slides
     .about-content{
@@ -146,7 +161,6 @@
             display: flex;
             justify-content: center;
             & > .about-container{
-                //Four Texts about me
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -170,6 +184,7 @@
                 .row1{
                     article{
                         @extend %speechBubble;
+                        
                         p{
                             text-align: center;
 
@@ -219,14 +234,16 @@
                         }
                         &:nth-child(2){
                             @include size(30%,45%);
+                            margin-bottom: 7%;
 
                             &::after{
-                                top: 5px;
-                                left:0;
-                                display: none;
+                                top: 20%;
+                                left: -2%;
+                                // display: none;
+                                // background-color: red;
                             }
                             
-                            border-radius: 0px 20px 20px 20px;
+                            // border-radius: 0px 20px 20px 20px;
                         }
                     }
                 }
@@ -247,7 +264,7 @@
                 }
             }
         }
-        //General specs must enhance
+        // General slide specs 
         .about-container{
             width: 200px;
             height: 250px;
@@ -262,12 +279,10 @@
             }
         }
     }
-    
     #stars{
         @include stars(1px,50s,$shadows-small);
         &::after{
             @include size(1px,1px);
-            box-shadow: $shadows-small;
         }
     }
     #stars2{
@@ -275,7 +290,6 @@
         &::after{
             @include size(2px,2px);
             @extend %afterStar;
-            box-shadow: $shadows-medium;
         }
     }
     #stars3{
@@ -283,7 +297,6 @@
         &::after{
             @include size(3px,3px);
             @extend %afterStar;
-            box-shadow: $shadows-big;
         }
     }
     .uncheck{
@@ -297,6 +310,7 @@
             left: 0;
         }
     }
+    //Feedback after unchecking items from list
     .about-container > span{
         filter: drop-shadow(2px 2px 1px black);
         position: absolute;
@@ -338,4 +352,9 @@
         bottom: -15%;
         rotate: 5deg;
     }
+}
+
+.selected{
+    background-color: $bgHeaderGreen !important;
+    box-shadow: 2px 2px black;
 }

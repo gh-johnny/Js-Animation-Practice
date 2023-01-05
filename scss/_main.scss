@@ -6,7 +6,7 @@
     font-family: 'Source Code Pro', monospace;
 }
 html{
-    scroll-behavior: smooth;
+    // scroll-behavior: smooth;
     overflow-x: hidden;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -36,5 +36,4 @@ body{
         width: 4.75em;
         padding-bottom: .75%;
     }
-
 }

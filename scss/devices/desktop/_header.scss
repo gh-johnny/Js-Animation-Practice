@@ -5,7 +5,6 @@ header{
     background-color: $white;
     isolation: isolate;
     overflow-x: hidden;
-
     //Babckground image
         &>aside{
             @include bgImg(url('../img/BgHeader.png'),cover,no-repeat, left);
@@ -30,8 +29,6 @@ header{
                 }
             }
         }
-    
-    
     //Title
     h1{
         @include flexColumn();
