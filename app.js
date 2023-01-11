@@ -153,19 +153,20 @@ const skills = [
     'LESS',
     'JavaScript',
     'jQuery',
-    'ReactJS',
+    'React.js',
     'Vue.js',
     'PHP',
     'Node.js',
     'MySQL',
     'Figma',
     'Photoshop',
-    'Angular.js',
     'WordPress',
     'Wix',
     'Weebly',
     'OOP',
     'UML',
+    'Git',
+    'GitHub'
 ],
     tagCloud = TagCloud('.sphere',skills,{
     radius: 235,
@@ -174,6 +175,11 @@ const skills = [
     direction: 100,
     keep: true,
 })
+//Tilt animation
+VanillaTilt.init(document.querySelectorAll(".card"), {
+    max: 25,
+    speed: 800,
+});
 //Contact section
 //Navigation bar colors animation
 let contactNavBarTl = gsap.timeline({defaults: {color: navDarkColor}})
