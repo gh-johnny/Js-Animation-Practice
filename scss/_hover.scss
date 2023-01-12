@@ -29,4 +29,9 @@
         cursor: pointer;
         scale: 1.1;
     }
+    //Card of projects
+    .card:hover > #content{
+        transform: translateY(0px);
+        opacity: 1 ;
+    }
 }

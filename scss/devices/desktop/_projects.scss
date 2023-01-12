@@ -63,8 +63,7 @@
                 .card{
                     transform-style: preserve-3d;
                     transform: perspective(1000px);
-
-
+                    overflow: hidden;
                     position: absolute;
                     width: 32.5%;
                     aspect-ratio: 3/4;
@@ -89,9 +88,21 @@
                         padding: 10%;
                         display: flex;
                         flex-direction: column;
+                        justify-content: space-between;
                         text-align: center;
-                        transform: translateZ(20px);
+                        row-gap: 2em;
+                        transform: translateY(50px);
+                        opacity: 0;
                         color: white;
+                        transition: 800ms;
+
+                        a{
+                            text-decoration: none;
+                            color: white;
+                            padding: 2%;
+                            border: 2px solid $bgHeaderGreen;
+                            border-radius: 5px;
+                        }
                     }
                 }
             }
