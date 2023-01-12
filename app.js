@@ -180,7 +180,7 @@ VanillaTilt.init(document.querySelectorAll(".card"), {
     max: 25,
     speed: 800,
     glare: true,
-    "max-glare": .125
+    "max-glare": .125,
 });
 //Contact section
 //Navigation bar colors animation

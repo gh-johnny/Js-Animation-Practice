@@ -59,30 +59,51 @@
             article{
                 @include size(80%,90%);
                 position: relative;
+                margin-top: 5%;
 
                 .card{
-                    transform-style: preserve-3d;
-                    transform: perspective(1000px);
                     overflow: hidden;
                     position: absolute;
                     width: 32.5%;
                     aspect-ratio: 3/4;
                     box-shadow: rgba(0, 0, 0, 09) 0px 3px 8px;
                     border-radius: 10px;
+                    border: 2px solid $bgHeaderGreen;
 
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        @include size(100%,80%);
+                        top: 0px;
+                        left: 0px;
+                        right: 0;
+                        bottom: 0;
+                        filter: brightness(30%);
+                    }
                     &:nth-child(1){
                         top: 0;
                         left: 0;
+
+                        &::before{
+                            background: center / cover no-repeat url('../../../img/Coffee++2.png');
+                        }
                     }
                     &:nth-child(2){
                         top: 30%;
                         right: 10%;
+                        
+                        &::before{
+                            background: 30% / cover no-repeat url('../../../img/Universe.png');
+                        }
                     }
                     &:nth-child(3){
                         bottom: 10%;
                         left: 0;
-                    }
 
+                        &::before{
+                            background: center / cover no-repeat url('../../../img/ShelfishReadersProject.png');
+                        }
+                    }
                     & > section{
                         box-sizing: border-box;
                         padding: 10%;
@@ -91,17 +112,39 @@
                         justify-content: space-between;
                         text-align: center;
                         row-gap: 2em;
-                        transform: translateY(50px);
-                        opacity: 0;
                         color: white;
-                        transition: 800ms;
+                        position: relative;
 
+                        & > *{
+                            transition: 400ms;
+                            text-shadow: 2px 2px 5px black;
+                            filter: brightness(150%);
+
+                            &:not(h2){
+                                opacity: 0;
+                            }
+                        }
+                        h2{
+                            font-size: 1.75vw;
+                            transform: translateY(570%);
+                        }
+                        p{
+                            transform: translateY(50px);
+                        }
+                        div{
+                            display: flex;
+                            justify-content: center;
+                            column-gap: 1em;
+                            transform: translateY(50px);
+                        }
                         a{
                             text-decoration: none;
                             color: white;
                             padding: 2%;
                             border: 2px solid $bgHeaderGreen;
                             border-radius: 5px;
+                            text-shadow: 2px 2px 5px black;
+                            transition: 300ms;
                         }
                     }
                 }

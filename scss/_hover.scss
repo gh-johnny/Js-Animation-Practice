@@ -1,19 +1,14 @@
 @media (hover: hover){
     //Cursor is default everywhere
-    html:hover{
+    html{
         cursor: default;
-
-        //All a tags
-        a:hover{
-            cursor: pointer;
-        }
     }
-    nav{
-        //Navigation side bar interaction
-        a:hover{
-            outline: 5px solid $bgHeaderGreen;
-            cursor: pointer;
-        }
+    html a:hover{
+        cursor: pointer;
+    }
+    //Navigation side bar interaction
+    nav a:hover{
+        outline: 5px solid $bgHeaderGreen;
     }
     //Each item from the sphere of skills
     .tagcloud--item:hover{
@@ -30,8 +25,11 @@
         scale: 1.1;
     }
     //Card of projects
-    .card:hover > #content{
+    .card:hover > #content > *{
         transform: translateY(0px);
-        opacity: 1 ;
+        opacity: 1;
+    }
+    .card a:hover{
+        background-color: $bgHeaderGreen;
     }
 }
