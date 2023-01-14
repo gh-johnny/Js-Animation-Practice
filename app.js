@@ -159,7 +159,6 @@ const skills = [
     'Node.js',
     'MySQL',
     'Figma',
-    'Photoshop',
     'WordPress',
     'Wix',
     'Weebly',

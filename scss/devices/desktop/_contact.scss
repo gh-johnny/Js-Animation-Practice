@@ -1,4 +1,33 @@
 .contact{
     @include size(100vw,100vh);
     background-color: whitesmoke;
+    position: relative;
+    isolation: isolate;
+
+    .section-title{
+        span{
+            color: $black;
+            border-color: $black;
+        }
+    }
+    & > figure{
+        background: center / contain no-repeat url('../../../img/contact.png');
+        width: 30vw;
+        aspect-ratio: 1;
+        position: absolute;
+        right: 25%;
+        top: 25%;
+        z-index: 2;
+    }
+    & > article{
+        width: 40vw;
+        aspect-ratio: 5 / 4;
+        border-radius: 15px;
+        position: absolute;
+        top: 20%;
+        right: 45%;
+        backdrop-filter: blur(1px);
+        border: 1px solid $bgHeaderGreen;
+    }
+
 }
