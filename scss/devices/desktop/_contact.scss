@@ -11,7 +11,11 @@
         }
     }
     & > figure{
-        background: center / contain no-repeat url('../../../img/contact.png');
+        // background: center / contain no-repeat url('../../../img/contact.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('../../../img/contact.png');
         width: 30vw;
         aspect-ratio: 1;
         position: absolute;
@@ -85,13 +89,25 @@
                 transition: 300ms;
 
                 &:nth-child(1){
-                    background: center / contain no-repeat url('../../../img/logoGitHub.png');
+                    // background: center / contain no-repeat url('../../../img/logoGitHub.png');
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-image: url('../../../img/logoGitHub.png');
                 }
                 &:nth-child(2){
-                    background: center / contain no-repeat url('../../../img/logoLinkedIn.png');
+                    // background: center / contain no-repeat url('../../../img/logoLinkedIn.png');
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-image: url('../../../img/logoLinkedIn.png');
                 }
                 &:nth-child(3){
-                    background: center / contain no-repeat url('../../../img/logoFiverr.png');
+                    // background: center / contain no-repeat url('../../../img/logoFiverr.png');
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-image: url('../../../img/logoFiverr.png');
                     width: 4em;
                 }
             }

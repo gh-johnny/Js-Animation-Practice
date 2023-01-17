@@ -85,7 +85,11 @@
                         left: 0;
 
                         &::before{
-                            background: center / cover no-repeat url('../../../img/Coffee++2.png');
+                            // background: center / cover no-repeat url('../../../img/Coffee++2.png');
+                            background-position: center;
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            background-image: url('../../../img/Coffee++2.png');
                         }
                     }
                     &:nth-child(2){
@@ -93,7 +97,11 @@
                         right: 10%;
                         
                         &::before{
-                            background: 30% / cover no-repeat url('../../../img/Universe.png');
+                            // background: 30% / cover no-repeat url('../../../img/Universe.png');
+                            background-position: center;
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            background-image: url('../../../img/Universe.png');
                         }
                     }
                     &:nth-child(3){
@@ -101,7 +109,11 @@
                         left: 0;
 
                         &::before{
-                            background: center / cover no-repeat url('../../../img/ShelfishReadersProject.png');
+                            // background: center / cover no-repeat url('../../../img/ShelfishReadersProject.png');
+                            background-position: center;
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            background-image: url('../../../img/ShelfishReadersProject.png');
                         }
                     }
                     & > section{
