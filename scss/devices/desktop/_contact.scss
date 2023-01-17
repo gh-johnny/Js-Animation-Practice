@@ -11,11 +11,7 @@
         }
     }
     & > figure{
-        // background: center / contain no-repeat url('../../../img/contact.png');
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-image: url('../../../img/contact.png');
+        @include bgImg(url('../../../img/Coffee++2.png'),contain,no-repeat,center);
         width: 30vw;
         aspect-ratio: 1;
         position: absolute;
@@ -89,25 +85,13 @@
                 transition: 300ms;
 
                 &:nth-child(1){
-                    // background: center / contain no-repeat url('../../../img/logoGitHub.png');
-                    background-position: center;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-image: url('../../../img/logoGitHub.png');
+                    @include bgImg(url('../../../img/logoGitHub.png'),contain,no-repeat,center);
                 }
                 &:nth-child(2){
-                    // background: center / contain no-repeat url('../../../img/logoLinkedIn.png');
-                    background-position: center;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-image: url('../../../img/logoLinkedIn.png');
+                    @include bgImg(url('../../../img/logoLinkedIn.png'),contain,no-repeat,center);
                 }
                 &:nth-child(3){
-                    // background: center / contain no-repeat url('../../../img/logoFiverr.png');
-                    background-position: center;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-image: url('../../../img/logoFiverr.png');
+                    @include bgImg(url('../../../img/logoFiverr.png'),contain,no-repeat,center);
                     width: 4em;
                 }
             }

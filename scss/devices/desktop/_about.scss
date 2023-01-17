@@ -89,7 +89,6 @@
                 h3{
                     font-size: 3em;
                     position: absolute;
-                    // border: 1px solid red;
                     width: 200%;
                 }
             }
@@ -146,7 +145,6 @@
                     z-index: 3;
 
                     .pencil{
-                        // background: center / contain no-repeat url('../../../img/pencil.png');
                         @include bgImg(url('../../../img/pencil.png'),contain,no-repeat, center);
                         width: 20vw;
                         scale: 1.3;
@@ -228,11 +226,7 @@
                     z-index: 3;
 
                     .me-coding{
-                        // background: center / contain no-repeat url('../../../img/meCoding.png');
-                        background-image: url('../img/meCoding.png');
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: contain;
+                        @include bgImg(url('../../../img/meCoding.png'),contain,no-repeat, center);
                         width: 30vw;
                         scale: 1.1;
                         aspect-ratio: 1;
