@@ -226,7 +226,7 @@
                     z-index: 3;
 
                     .me-coding{
-                        @include bgImg(url('../img/austronaut.png'),contain,no-repeat, center);
+                        @include bgImg(url('../img/meCoding.png'),contain,no-repeat, center);
                         width: 30vw;
                         scale: 1.1;
                         aspect-ratio: 1;
