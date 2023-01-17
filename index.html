@@ -17,31 +17,32 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js" integrity="sha512-RX/OFugt/bkgwRQg4B22KYE79dQhwaPp2IZaA/YyU3GMo/qY7GrXkiG6Dvvwnds6/DefCfwPTgCXnaC6nAgVYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- TagCloud -->
     <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"></script>
+    <!-- Scroll to -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
     <title>Marcelo's Portfolio</title>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="#home"><i class="fa-solid fa-house"></i></a></li>
-            <li><a href="#about"><i class="fa-solid fa-user"></i></a></li>
-            <li><a href="#projects"><i class="fa-solid fa-code"></i></a></li>
-            <li><a href="#contact"><i class="fa-solid fa-at"></i></a></li>
+            <li><a><i class="fa-solid fa-house"></i></a></li>
+            <li><a><i class="fa-solid fa-user"></i></a></li>
+            <li><a><i class="fa-solid fa-code"></i></a></li>
+            <li><a><i class="fa-solid fa-at"></i></a></li>
             <aside></aside><!--vertical line-->
         </ul>
     </nav>
-    <header class='panel' id="home">
+    <header class='panel' id="section1">
         <aside>
             <article> 
                 <a href="https://github.com/Marcelo64/My-Resume/raw/resume/jo%C3%A3o_marcelo_resume.pdf" download="joao_marcelo_resume">My resume <i class="fa-solid fa-file-arrow-down"></i></a>
-                <a href="mailto:jmfurtadoromero@gmail.com">@jmfurtadoromero <i class="fa-solid fa-envelope"></i></a>
+                <a href="mailto:jmfurtadoromero@gmail.com">jmfurtadoromero <i class="fa-solid fa-envelope"></i></a>
             </article>
         </aside>
-        <!-- color change on hover... to top... -->
         <h1>I'm Marcelo
             <small>&ltWeb Developer/&gt</small>
         </h1>
     </header>
-    <section class="panel about" id="about">
+    <section class="panel about" id="section2">
         <div class="marker-about"></div>
         <section class="section-title">
             <span>about</span>
@@ -86,7 +87,7 @@
                     <div class="row1">
                         <article>
                             <p>
-                                My journey started after graduating from high school in <span>Brazil</span>. That was when I decided to go and study <span>abroad</span> an area of interest, having the fluency since 15 I threw myself out in the world.
+                                My journey started after graduating from high school in Brazil. That was when I decided to go and study abroad an area of interest, having the fluency since 15 I threw myself out in the world.
                                  And six months later there I was, in a new country, all by myself, not knowing how to be an adult and having to study this dificult and yet lovely field
                             </p>
                         </article>
@@ -121,7 +122,7 @@
         <div id="stars2" class="stars"></div>
         <div id="stars3" class="stars"></div>
     </section>
-    <section class="panel projects" id="projects">
+    <section class="panel projects" id="section3">
         <div class="marker-projects"></div>
         <section class="section-title">
             <span>projects</span>
@@ -138,7 +139,6 @@
                             <p>Shopping Website!</p>
                             <div>
                                 <a target="_blank" href="https://github.com/Marcelo64/Coffee-">Repo</a>
-                                <a target="_blank" href="#">Live</a>
                             </div>
                         </section>
                     </figure>
@@ -165,15 +165,29 @@
             </div>
         </div>
     </section>
-    <section class="panel contact" id="contact">
+    <section class="panel contact" id="section4">
         <div class="marker-contact"></div>
         <section class="section-title">
             <span>contact</span>
         </section>
         <figure></figure>
         <article>
-
-            <a href="mailto:jmfurtadoromero@gmail.com">Send Email</a>
+            <section class="first-box">
+                <section>
+                    <a href="mailto:jmfurtadoromero@gmail.com" class="change-color">jmfurtadoromero@gmail.com</a>
+                    <span class="icon-holder"><i class="fa-solid fa-clipboard"></i></span>
+                </section>
+                <section>
+                    <p>+1 (236) 234-0939</p>
+                    <span class="icon-holder"><i class="fa-solid fa-clipboard"></i></span>
+                </section>
+            </section>
+            <hr/>
+            <article class="second-box">
+                <a href="https://github.com/Marcelo64" target="_blank"></a>
+                <a href="https://www.linkedin.com/in/jo%C3%A3o-marcelo-furtado-romero-20916b257/" target="_blank"></a>
+                <a href="https://www.fiverr.com/johnny_marcelo?public_mode=true" target="_blank"></a>
+            </article>
         </article>
     </section>
 </body>

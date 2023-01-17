@@ -15,19 +15,86 @@
         width: 30vw;
         aspect-ratio: 1;
         position: absolute;
-        right: 25%;
+        right: 15%;
         top: 25%;
         z-index: 2;
     }
     & > article{
         width: 40vw;
         aspect-ratio: 5 / 4;
-        border-radius: 15px;
         position: absolute;
         top: 20%;
-        right: 45%;
+        right: 40%;
         backdrop-filter: blur(1px);
         border: 1px solid $bgHeaderGreen;
-    }
+        border-radius: 10px;
+        
 
+        & > section{
+            @include size(100%,80%);
+            display: flex;
+            flex-direction: column;
+            row-gap: 2em;
+            box-sizing: border-box;
+            padding-top: 5em;
+            padding-left: 3em;
+            
+            & > section{
+                width: 26vw;
+                display: flex;
+                justify-content: space-between;
+                box-sizing: border-box;
+                border-radius: 10px;
+
+                & > *:nth-child(1) {
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.25vw;
+                    color: $black;
+                    transition: 300ms;
+                }
+
+                & > span{
+                    box-sizing: border-box;
+                    border-left: 1px solid grey;
+                    padding: 1vw;
+                    display: grid;
+                    place-content: center;
+                    width: max-content;
+                    color: $black;
+                    transition: 300ms;
+
+                    & > i{
+                        box-sizing: border-box;
+                        font-size: 1.4vw;
+                        margin-left: .2vw;
+                    }
+                }
+            }
+        }
+        & > article{
+            @include size(100%,20%);
+            display: flex;
+            box-sizing: border-box;
+            padding-left: 3em;
+            column-gap: 3vw;
+
+            & > a{
+                width: 3em;
+                aspect-ratio: 1;
+                transition: 300ms;
+
+                &:nth-child(1){
+                    background: center / contain no-repeat url('../../../img/logoGitHub.png');
+                }
+                &:nth-child(2){
+                    background: center / contain no-repeat url('../../../img/logoLinkedIn.png');
+                }
+                &:nth-child(3){
+                    background: center / contain no-repeat url('../../../img/logoFiverr.png');
+                    width: 4em;
+                }
+            }
+        }
+    }
 }

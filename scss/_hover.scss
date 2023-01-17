@@ -10,10 +10,12 @@
     nav a:hover{
         outline: 5px solid $bgHeaderGreen;
     }
-    //Each item from the sphere of skills
-    .tagcloud--item:hover{
-        color: $bgHeaderGreen
+    //Header anchor tags
+    header > aside > article > *:hover{
+        box-shadow: 8px 8px black;
+        color: $bgHeaderGreen;
     }
+    //About
     //Each item from the list/post-it
     .about-container li:hover{
         cursor: pointer;
@@ -24,6 +26,11 @@
         cursor: pointer;
         scale: 1.1;
     }
+    //Projects
+    //Each item from the sphere of skills
+    .tagcloud--item:hover{
+        color: $bgHeaderGreen
+    }
     //Card of projects
     .card:hover > #content > *{
         transform: translateY(0px);
@@ -32,4 +39,21 @@
     .card a:hover{
         background-color: $bgHeaderGreen;
     }
+    //Contact
+    //Gmail and Phone Number
+    .first-box > section > *:hover {
+        cursor: pointer;
+        color: grey;
+    }
+    .first-box p:hover{
+        cursor: text;
+    }
+    .first-box > section > .change-color:hover{
+        color: grey;
+    }
+    //Social media Icons
+    .second-box > a:hover{
+        scale: 1.1;
+    }
+
 }
