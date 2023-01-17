@@ -11,7 +11,7 @@
         }
     }
     & > figure{
-        @include bgImg(url('../../../img/Coffee++2.png'),contain,no-repeat,center);
+        @include bgImg(url('../img/contact.png'),contain,no-repeat,center);
         width: 30vw;
         aspect-ratio: 1;
         position: absolute;
@@ -85,13 +85,13 @@
                 transition: 300ms;
 
                 &:nth-child(1){
-                    @include bgImg(url('../../../img/logoGitHub.png'),contain,no-repeat,center);
+                    @include bgImg(url('../img/logoGitHub.png'),contain,no-repeat,center);
                 }
                 &:nth-child(2){
-                    @include bgImg(url('../../../img/logoLinkedIn.png'),contain,no-repeat,center);
+                    @include bgImg(url('../img/logoLinkedIn.png'),contain,no-repeat,center);
                 }
                 &:nth-child(3){
-                    @include bgImg(url('../../../img/logoFiverr.png'),contain,no-repeat,center);
+                    @include bgImg(url('../img/logoFiverr.png'),contain,no-repeat,center);
                     width: 4em;
                 }
             }

@@ -85,7 +85,7 @@
                         left: 0;
 
                         &::before{
-                            @include bgImg(url('../../../img/Coffee++2.png'),cover,no-repeat, center);
+                            @include bgImg(url('../img/Coffee++2.png'),cover,no-repeat, center);
                         }
                     }
                     &:nth-child(2){
@@ -93,7 +93,7 @@
                         right: 10%;
                         
                         &::before{
-                            @include bgImg(url('../../../img/Universe.png'),cover,no-repeat, 30%);
+                            @include bgImg(url('../img/Universe.png'),cover,no-repeat, 30%);
                         }
                     }
                     &:nth-child(3){
@@ -101,7 +101,7 @@
                         left: 0;
 
                         &::before{
-                            @include bgImg(url('../../../img/ShelfishReadersProject.png'),cover,no-repeat, center);
+                            @include bgImg(url('../img/ShelfishReadersProject.png'),cover,no-repeat, center);
                         }
                     }
                     & > section{
