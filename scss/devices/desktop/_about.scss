@@ -65,7 +65,7 @@
                 &:nth-child(1){
                     .austronaut{
                         margin-top: 10%;
-                        @include bgImg(url('../img/astronaut.png'),cover,no-repeat, center);
+                        @include bgImg(url('../img/astronaut.png'),contain,no-repeat, center);
                         width: 100%;
                         aspect-ratio: 1;
                     }
@@ -147,10 +147,7 @@
 
                     .pencil{
                         // background: center / contain no-repeat url('../../../img/pencil.png');
-                        background-image: url('../../../img/pencil.png');
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: contain;
+                        @include bgImg(url('../../../img/pencil.png'),contain,no-repeat, center);
                         width: 20vw;
                         scale: 1.3;
                         aspect-ratio: 1;
@@ -232,7 +229,7 @@
 
                     .me-coding{
                         // background: center / contain no-repeat url('../../../img/meCoding.png');
-                        background-image: url('../../../img/meCoding.png');
+                        background-image: url('../img/meCoding.png');
                         background-position: center;
                         background-repeat: no-repeat;
                         background-size: contain;
