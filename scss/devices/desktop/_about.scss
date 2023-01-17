@@ -65,7 +65,7 @@
                 &:nth-child(1){
                     .austronaut{
                         margin-top: 10%;
-                        @include bgImg(url('../../../img/astronaut.png'),cover,no-repeat, center);
+                        @include bgImg(url('../img/astronaut.png'),cover,no-repeat, center);
                         width: 100%;
                         aspect-ratio: 1;
                     }
